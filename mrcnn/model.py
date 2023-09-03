@@ -21,7 +21,8 @@ tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
 import keras
 import keras.backend as K
-import keras.layers as KL
+# import keras.layers as KL
+from tensorflow.keras.layers import Layer as KL
 import keras.engine as KE
 import keras.models as KM
 
@@ -250,7 +251,7 @@ def clip_boxes_graph(boxes, window):
     y2 = tf.maximum(tf.minimum(y2, wy2), wy1)
     x2 = tf.maximum(tf.minimum(x2, wx2), wx1)
     clipped = tf.concat([y1, x1, y2, x2], axis=1, name="clipped_boxes")
-    clipped.set_shape((clipped.shape[0], 4))
+    clipped.set_shape((clipped.sh/ape[0], 4))
     return clipped
 
 
